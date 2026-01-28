@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio - Areeba Khalid</title>
+    <link rel="icon" type="image/png" href="../Images/logo.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a3e 0%, #0f0f23 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+            color: #fff;
+        }
+
+        /* Animated Background Shapes */
+        .shape {
+            position: absolute;
+            opacity: 0.6;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            background: #ff6b6b;
+            top: 10%;
+            left: 10%;
+            border-radius: 50%;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            background: #4ecdc4;
+            top: 60%;
+            left: 80%;
+            border-radius: 20%;
+            animation-delay: 2s;
+        }
+
+        .shape:nth-child(3) {
+            width: 40px;
+            height: 40px;
+            background: #ffe66d;
+            top: 80%;
+            left: 20%;
+            transform: rotate(45deg);
+            animation-delay: 4s;
+        }
+
+        .shape:nth-child(4) {
+            width: 50px;
+            height: 50px;
+            background: #ff9ff3;
+            top: 20%;
+            left: 85%;
+            border-radius: 50%;
+            animation-delay: 1s;
+        }
+
+        .shape:nth-child(5) {
+            width: 70px;
+            height: 70px;
+            background: #54a0ff;
+            top: 70%;
+            left: 70%;
+            border-radius: 30%;
+            animation-delay: 3s;
+        }
+
+        .shape:nth-child(6) {
+            width: 45px;
+            height: 45px;
+            background: #48dbfb;
+            top: 40%;
+            left: 5%;
+            transform: rotate(45deg);
+            animation-delay: 5s;
+        }
+
+        .shape:nth-child(7) {
+            width: 35px;
+            height: 35px;
+            background: #feca57;
+            top: 15%;
+            left: 50%;
+            border-radius: 50%;
+            animation-delay: 2.5s;
+        }
+
+        .shape:nth-child(8) {
+            width: 55px;
+            height: 55px;
+            background: #ee5a6f;
+            top: 85%;
+            left: 90%;
+            border-radius: 20%;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-30px) rotate(90deg);
+            }
+            50% {
+                transform: translateY(0) rotate(180deg);
+            }
+            75% {
+                transform: translateY(30px) rotate(270deg);
+            }
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            color: #ddd;
+            margin-top: 10px;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Portfolio Card */
+        .portfolio-card {
+            background: rgba(50, 50, 70, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Left Section */
+        .left-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .bio h2 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .bio p {
+            font-size: 1.2em;
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: #ff9800;
+            font-size: 1.5em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #ff9800;
+            padding-bottom: 5px;
+        }
+
+        .education-item {
+            margin-bottom: 15px;
+            color: #ddd;
+            line-height: 1.6;
+        }
+
+        .education-item strong {
+            color: #fff;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .experience-item {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            border-left: 3px solid #ff9800;
+            color: #ddd;
+        }
+
+        .experience-item p {
+            font-size: 1em;
+            margin: 5px 0;
+            line-height: 1.5;
+        }
+
+        .experience-item strong {
+            color: #fff;
+            font-size: 1.1em;
+        }
+
+        /* Skills Section */
+        .skills {
+            margin-top: 30px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.1);
+        }
+
+        /* Contact Section */
+        .contact-info {
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            color: #ddd;
+            font-size: 1.05em;
+        }
+
+        .contact-item::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #ff9800;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        /* Right Section - Photo */
+        .right-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .photo-container {
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 3/4;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .photo-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600"><rect fill="%23f5f5dc" width="400" height="600"/><path d="M0,200 Q100,150 200,200 T400,200 L400,600 L0,600 Z" fill="%23d4d4bc"/></svg>');
+            background-size: cover;
+        }
+
+        .photo-placeholder {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 80%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            font-size: 5em;
+            color: #555;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #ddd;
+            position: relative;
+            z-index: 10;
+        }
+
+        footer a {
+            color: #ff9800;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ffc107;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .portfolio-card {
+                grid-template-columns: 1fr;
+                padding: 30px 20px;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            .bio h2 {
+                font-size: 2em;
+            }
+
+            .photo-container {
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background Shapes -->
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+
+    <!-- Header -->
+    <header>
+        <h1>MY PORTFOLIO</h1>
+        <p class="subtitle">Quality Assurance & Web Development</p>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <div class="portfolio-card">
+            <!-- Left Section -->
+            <div class="left-section">
+                <div class="bio">
+                    <h2>Hi, I'm Areeba Khalid</h2>
+                    <p>Software Engineering & QA Professional</p>
+                </div>
+
+                <!-- Educational Criteria -->
+                <div class="education">
+                    <h3 class="section-title">Educational Criteria</h3>
+                    <div class="education-item">
+                        <strong>Bachelor of Software Engineering</strong>
+                        COMSATS University Islamabad, Abbottabad Campus<br>
+                        Mar 2022 – Jan 2026
+                    </div>
+                    <div class="education-item">
+                        <strong>Pre-Engineering</strong>
+                        The Muslim Education System<br>
+                        Jul 2019 – Apr 2021
+                    </div>
+                </div>
+
+                <!-- Experience -->
+                <div class="experience">
+                    <h3 class="section-title">Experience</h3>
+                    <div class="experience-item">
+                        <p><strong>Software Quality Assurance Intern</strong></p>
+                        <p>DevelopersHub Corporation (Remote) | Nov 2025 – Present</p>
+                        <p>Manual & Automation Testing, Cypress, JMeter, OWASP ZAP</p>
+                    </div>
+                    <div class="experience-item">
+                        <p><strong>Software Quality Assurance Intern</strong></p>
+                        <p>Hifah Technologies (On-Site) | Jul 2025 – Oct 2025</p>
+                        <p>Manual Testing, Bug Reporting, QA Standards</p>
+                    </div>
+                </div>
+
+                <!-- Skills -->
+                <div class="skills">
+                    <h3 class="section-title">Skills</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Manual Testing</span>
+                        <span class="skill-tag">Automation Testing</span>
+                        <span class="skill-tag">Cypress</span>
+                        <span class="skill-tag">JMeter</span>
+                        <span class="skill-tag">OWASP ZAP</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                        <span class="skill-tag">SDLC/STLC</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">GitHub</span>
+                    </div>
+                </div>
+
+                <!-- Contact Us -->
+                <div class="contact">
+                    <h3 class="section-title">Contact Us</h3>
+                    <div class="contact-info">
+                        <div class="contact-item"> 0327-8590370</div>
+                        <div class="contact-item"> areebakhalid1303@gmail.com</div>
+                        <div class="contact-item"> Abbottabad,Pakistan.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Section - Photo -->
+            <div class="right-section">
+                <div class="photo-container">
+                    <div class="photo-placeholder">👤</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Areeba Khalid</strong> - Software Engineering & Quality Assurance</p>
+        <p>© 2026 All Rights Reserved</p>
+    </footer>
+</body>
+</html>
